@@ -1,0 +1,22 @@
+<DatabaseConfigs>
+
+    <configs>
+        <id>1</id>
+        <name>cygrca_172</name>
+        <host>10.5.179.133</host>
+        <port>1521</port>
+        <sid>OPTSAPT1</sid>
+        <username>cygrca</username>
+        <password>welcome#123</password>
+    </configs>
+
+    <configs>
+        <id>2</id>
+        <name>cyginv_SA</name>
+        <host>10.5.179.87</host>
+        <port>1521</port>
+        <sid>OPTSAPT1</sid>
+        <username>cyginv</username>
+        <password>cyginv</password>
+    </configs>
+</DatabaseConfigs>

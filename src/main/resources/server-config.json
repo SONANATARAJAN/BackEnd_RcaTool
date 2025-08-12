@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "name": "EIG_204",
+    "user": "cygnet",
+    "ip": "192.168.4.204",
+    "dest": "/home/cygnet/Applciation/EIG_TT"
+  },
+  {
+    "id": 2,
+    "name": "zone1_200",
+    "user": "cygnet",
+    "ip": "192.168.4.200",
+    "dest": "/home/cygnet/ZNMSZone1/ZNMSAPP"
+  },
+  {
+    "id": 3,
+    "name": "zone1_ACS_200",
+    "user": "cygnet",
+    "ip": "192.168.4.200",
+    "dest": "/home/cygnet/ZNMSZone1/ACS"
+  },
+  {
+    "id": 4,
+    "name": "zone2_201",
+    "user": "cygnet",
+    "ip": "192.168.4.201",
+    "dest": "/home/cygnet/ZNMSZone2/ZNMSAPP"
+  },
+  {
+    "id": 5,
+    "name": "zone2_ACS_201",
+    "user": "cygnet",
+    "ip": "192.168.4.201",
+    "dest": "/home/cygnet/ZNMSZone2/ACS"
+  },
+  {
+    "id": 6,
+    "name": "CNMS_202",
+    "user": "cygnet",
+    "ip": "192.168.4.202",
+    "dest": "/home/cygnet/CNMS/APP"
+  },
+  {
+    "id": 7,
+    "name": "CNMS_ACS_202",
+    "user": "cygnet",
+    "ip": "192.168.4.202",
+    "dest": "/home/cygnet/CNMS/ACS"
+  },
+  {
+    "id": 8,
+    "name": "zone1_79",
+    "user": "cygnet",
+    "ip": "192.168.4.79",
+    "dest": "/data/ascon/zone1"
+  },
+  {
+    "id": 9,
+    "name": "logeswari",
+    "user": "logeswari",
+    "ip": "192.168.9.96",
+    "dest": "/data/eig_tt/Testing-patchscript"
+  },
+  {
+    "id": 10,
+    "name": "sa170",
+    "user": "nms_user",
+    "ip": "10.5.179.170",
+    "dest": "/cygnet/NextRelease2/cosmoss_Build"
+  },
+  {
+    "id": 11,
+    "name": "sa172",
+    "user": "nms_user",
+    "ip": "10.5.179.172",
+    "dest": "/cygnet/NextRelease"
+  },
+  {
+    "id": 12,
+    "name": "sa169_fm",
+    "user": "nms_user",
+    "ip": "10.5.179.169",
+    "dest": "/cygnet/SA-INTEG/Fm-Server"
+  },
+  {
+    "id": 13,
+    "name": "sa169_inv",
+    "user": "nms_user",
+    "ip": "10.5.179.169",
+    "dest": "/cygnet/SA-INTEG/Inventory-server"
+  },
+  {
+    "id": 14,
+    "name": "sa169_client",
+    "user": "nms_user",
+    "ip": "10.5.179.169",
+    "dest": "/cygnet/SA-INTEG/Client-server"
+  },
+  {
+    "id": 15,
+    "name": "sa166",
+    "user": "nms_user",
+    "ip": "10.5.179.166",
+    "dest": "/cygrca1/SA-INTEG/RCA-Server"
+  },
+  {
+    "id": 16,
+    "name": "sathya",
+    "user": "sathya",
+    "ip": "192.168.11.139",
+    "dest": "/home/sathya/Music"
+  },
+  {
+    "id": 17,
+    "name": "EIG_Testing_204",
+    "user": "cygnet",
+    "ip": "192.168.4.204",
+    "dest": "/home/cygnet/Testing"
+  },
+  {
+    "id": 18,
+    "name": "EIG_96",
+    "user": "nsona",
+    "ip": "192.168.4.96",
+    "dest": "/home/nsona/eig_tt_app"
+  },
+  {
+    "id": 19,
+    "name": "sa131",
+    "user": "nms_user",
+    "ip": "10.5.179.131",
+    "dest": "/cygnet/cygfm"
+  }
+]
