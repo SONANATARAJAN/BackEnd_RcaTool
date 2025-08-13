@@ -34,7 +34,7 @@ public class DatabaseExcelService {
         List<List<String>> result = new ArrayList<>();
         for (Map<String, Object> row : rows) {
             List<String> values = new ArrayList<>();
-            for (int i = 1; i <= 12; i++) {
+            for (int i = 1; i <= 14; i++) {
                 Object value = row.getOrDefault("COL" + i, "");
                 values.add(value == null ? "" : value.toString().trim());
             }

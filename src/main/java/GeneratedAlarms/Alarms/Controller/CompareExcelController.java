@@ -24,11 +24,10 @@ public class CompareExcelController {
     private DatabaseExcelService dbService;
 
     private static final String[] COLUMN_NAMES = {
-            "P_OBJTYPE", "P_ETSUK", "P_MRMTID", "P_REFEROBJTYPE", "P_SOURCEOFRCI",
-            "C_OBJTYPE", "C_ETSUK", "C_MRMTID", "C_REFEROBJTYPE", "C_SOURCEOFRCI",
+            "R1_OBJTYPE", "R1_ETSUK", "R1_MRMTID", "R1_REFEROBJTYPE", "R1_SOURCEOFRCI","R1_ADDINFO",
+            "R2_OBJTYPE", "R2_ETSUK", "R2_MRMTID", "R2_REFEROBJTYPE", "R2_SOURCEOFRCI","R2_ADDINFO",
             "SRCOFRELATIONSHIP", "RELATIONSHIPTYPE"
     };
-
     @GetMapping("/compare")
     public ResponseEntity<List<CompareExcelResult>> compareWithExcel(@RequestParam String dbName) throws Exception {
 
@@ -41,7 +40,7 @@ public class CompareExcelController {
                 .collect(Collectors.toList());
 
         // Read Excel data once, skip header, and normalize
-        List<List<String>> excelData = excelService.readExcelFromClasspath("data/RCA_RelationShip_Sheet4_.xlsx");
+        List<List<String>> excelData = excelService.readExcelFromClasspath("data/RCA_RELATIONSHIP.xlsx");
         List<List<String>> excelRows = excelData.subList(1, excelData.size());
         List<String> normalizedExcelRows = excelRows.stream()
                 .map(this::normalizeRow)
@@ -67,6 +66,12 @@ public class CompareExcelController {
                     System.out.println("Mismatch at index " + k +
                             " DB='" + (int) dbChar + "' XL='" + (int) xlChar + "'");
                 }*/
+            /*    for (int col = 0; col < COLUMN_NAMES.length; col++) {
+                    String dbVal = (col < dbRow.size() && dbRow.get(col) != null) ? dbRow.get(col).toString() : "";
+                    String xlVal = (col < excelRow.size() && excelRow.get(col) != null) ? excelRow.get(col).toString() : "";
+                    System.out.println("Col " + col + " (" + COLUMN_NAMES[col] + ") DB='" + dbVal + "' Excel='" + xlVal + "'");
+                }*/
+
             }
 
             System.out.println("-------------------------------------------");
@@ -88,6 +93,8 @@ public class CompareExcelController {
                         : "";
                 mappedRow.put(COLUMN_NAMES[j], cellValue);
             }
+
+
 
             results.add(new CompareExcelResult(mappedRow, matchFound ? "Pass" : "Fail"));
         }

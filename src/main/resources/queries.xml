@@ -12,24 +12,25 @@
 
     <query id="compareQuery">
         SELECT DISTINCT
-        r1.objecttype AS COL1,
-        r1.eventtypespecificuniquekey AS COL2,
-        r1.mrmtId AS COL3,
-        r1.referobjtype AS COL4,
-        r1.sourceofrci AS COL5,
-        r2.objecttype AS COL6,
-        r2.eventtypespecificuniquekey AS COL7,
-        r2.mrmtId AS COL8,
-        r2.referobjtype AS COL9,
-        r2.sourceofrci AS COL10,
-        h.srcofrelationship AS COL11,
-        h.relationshiptype AS COL12
-        FROM "RCA_HIER_HIS_RCI_12_8_2025" h, rca_rci r1, rca_rci r2
-        WHERE h.parentid = r1.id AND h.childid = r2.id
-        ORDER BY
-        r1.objecttype, r1.eventtypespecificuniquekey, r1.referobjtype, r1.sourceofrci,
-        r2.objecttype, r2.eventtypespecificuniquekey, r2.referobjtype, r2.sourceofrci,
-        h.srcofrelationship, h.relationshiptype
+        r1.objecttype AS COL1, r1.eventtypespecificuniquekey AS COL2, r1.mrmtId AS COL3,
+        r1.referobjtype AS COL4, r1.sourceofrci AS COL5,
+        CASE
+        WHEN r1.additionalinfo IS NOT NULL
+        AND REPLACE(REPLACE(LOWER(r1.additionalinfo), CHR(10), ''), CHR(13), '') LIKE '%layerrate=%'
+        THEN r1.additionalinfo
+        ELSE NULL
+        END AS COL6,
+        r2.objecttype AS COL7, r2.eventtypespecificuniquekey AS COL8, r2.mrmtId AS COL9, r2.referobjtype AS COL10, r2.sourceofrci AS COL11,
+        CASE
+        WHEN r2.additionalinfo IS NOT NULL
+        AND REPLACE(REPLACE(LOWER(r2.additionalinfo), CHR(10), ''), CHR(13), '') LIKE '%layerrate=%'
+        THEN r2.additionalinfo
+        ELSE NULL
+        END AS COL12,
+        h.srcofrelationship AS COL13, h.relationshiptype AS COL14
+        FROM RCA_HIER_HIS_RCI_12_8_2025 h
+        JOIN rca_rci r1 ON h.parentid = r1.id
+        JOIN rca_rci r2 ON h.childid = r2.id
     </query>
 
 </queries>
